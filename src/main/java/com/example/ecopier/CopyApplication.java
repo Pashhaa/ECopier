@@ -11,7 +11,7 @@ public class CopyApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(CopyApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 200, 650);
+        Scene scene = new Scene(fxmlLoader.load(), 300, 680);
         stage.setTitle("Copier");
         stage.setScene(scene);
         stage.show();

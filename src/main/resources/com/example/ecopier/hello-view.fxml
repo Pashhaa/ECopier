@@ -10,11 +10,11 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-    <Label alignment="TOP_LEFT" prefHeight="14.0" prefWidth="104.0" text="Browse ethalon file" />
-    <Button accessibleRole="MENU" mnemonicParsing="false" onAction="#browseEthalon" rotate="-0.6" style="-fx-background-color: DARKSEAGREEN;" text="Browse" />
     <Label text="Browse copy list file" />
     <Button mnemonicParsing="false" onAction="#browseCopyList" style="-fx-background-color: DARKSEAGREEN;" text="Browse" />
-    <Label text="Month and Year" />
+    <Label alignment="TOP_LEFT" prefHeight="14.0" prefWidth="104.0" text="Browse ethalon file" />
+    <Button accessibleRole="MENU" mnemonicParsing="false" onAction="#browseEthalon" rotate="-0.6" style="-fx-background-color: DARKSEAGREEN;" text="Browse" />
+    <Label text="Type month and year" />
     <TextField fx:id="textField" prefHeight="26.0" prefWidth="116.0" />
     <Button mnemonicParsing="false" onAction="#copy" style="-fx-background-color: LIGHTGREEN;" text="Copy" />
     <Label text="Files created:" />
@@ -23,4 +23,5 @@
     <Label fx:id="firstNum" />
     <Label text="The last num:" />
     <Label fx:id="lastNum" />
+   <Label text="Destination directory D:\companies" />
 </VBox>

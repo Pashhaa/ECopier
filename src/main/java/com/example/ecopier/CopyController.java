@@ -7,13 +7,13 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.util.CellUtil;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -35,6 +35,7 @@ public class CopyController {
 
     @FXML
     private TextField textField;
+
 
     File ethalon;
     File copyList;
@@ -66,7 +67,7 @@ public class CopyController {
     protected void copy(ActionEvent event) throws IOException, InvalidFormatException {
         month = textField.getText();
         XSSFWorkbook workbook = new XSSFWorkbook(copyList);
-        XSSFSheet sheet = workbook.getSheetAt(1);
+        XSSFSheet sheet = workbook.getSheetAt(0);
         Iterator<Row> rowIterator = sheet.iterator();
 
         while (rowIterator.hasNext()) {
@@ -74,7 +75,7 @@ public class CopyController {
             Iterator<Cell> cellIterator = row.cellIterator();
 
             while (cellIterator.hasNext()) {
-                Cell cell = cellIterator.next();
+                Cell cell = CellUtil.getCell(cellIterator.next().getRow(),0);
                 CellType cellType = cell.getCellTypeEnum();
 
                 switch (cellType) {
@@ -94,6 +95,7 @@ public class CopyController {
         while (matcher.find()) {
             edrpou.add(correctNum.substring(matcher.start(), matcher.end()));
         }
+
         firstNum.setText(String.valueOf(edrpou.get(0)));
         lastNum.setText(String.valueOf(edrpou.get(edrpou.size()-1)));
         fileCounter = edrpou.size();
