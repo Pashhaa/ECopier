@@ -96,10 +96,10 @@ public class CopyController {
             edrpou.add(correctNum.substring(matcher.start(), matcher.end()));
         }
 
-        firstNum.setText(String.valueOf(edrpou.get(0)));
-        lastNum.setText(String.valueOf(edrpou.get(edrpou.size()-1)));
+        firstNum.setText("The first num: "+edrpou.get(0));
+        lastNum.setText("The last num: "+edrpou.get(edrpou.size()-1));
         fileCounter = edrpou.size();
-        filesQuan.setText(String.valueOf(fileCounter));
+        filesQuan.setText("Files created: "+fileCounter);
 
         try {
             File destFile = null;

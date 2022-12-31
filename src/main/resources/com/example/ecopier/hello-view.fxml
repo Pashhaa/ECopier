@@ -17,11 +17,8 @@
     <Label text="Type month and year" />
     <TextField fx:id="textField" prefHeight="26.0" prefWidth="116.0" />
     <Button mnemonicParsing="false" onAction="#copy" style="-fx-background-color: LIGHTGREEN;" text="Copy" />
-    <Label text="Files created:" />
     <Label fx:id="filesQuan" textAlignment="RIGHT" />
-    <Label text="The first num:" />
     <Label fx:id="firstNum" />
-    <Label text="The last num:" />
     <Label fx:id="lastNum" />
    <Label text="Destination directory D:\companies" />
 </VBox>
